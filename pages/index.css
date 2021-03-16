@@ -1,6 +1,59 @@
 @import url('../vendor/normalize.css');
 @import url('../fonts/fonts.css');
 
+.popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: black;
+  visibility: hidden;
+  z-index: 1;
+}
+.popup_visible {
+  visibility: visible;
+}
+.popup__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  
+}
+.popup__content {
+  position: absolute;
+  top: 195px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  min-width: 430px;
+  min-height: 330px;
+  background-color: white;
+  padding: 34px 36px 37px;
+  box-sizing: border-box;
+}
+.popup__close-button {
+  color:white;
+  font-size: 60px;
+  font-weight: normal;
+  position: absolute;
+  right: -30px;
+  top: -50px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
+
+
+
+
+
 .page__container {
     min-width: 320px;
     max-width: 880px;
@@ -122,25 +175,32 @@
     }
   }
 
-  .edit-button {
+  
+  .edit-btn {
+    background-color: transparent;
+    box-sizing: border-box;
+    position: relative;
     margin-left: 18px;
-    border: 1px solid #ffffff;
     width: 24px;
     height: 24px;
+    padding: 0;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    z-index: 0;
   }
-  @media screen and (max-width: 425px) {
-    .edit-button {
-        margin-left: 10px;
-      font-size: 27px;
-      line-height: 33px;
+  .edit-btn:hover {
+    opacity: 0.6;
+  }
+
+  .edit-icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-image: url("../images/add-button.svg");
+    width: 10px;
+    height: 10px;
+    background-repeat : no-repeat;
     }
-}
-  .edit-button:hover {
-      opacity: 0.3;
-  }
-  .edit-button__img {
-      margin: 7px;
-  }
   
   
   .add__button {
