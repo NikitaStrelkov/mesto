@@ -1,0 +1,21 @@
+.popup__close-button {
+    color:white;
+    font-size: 60px;
+    font-weight: bold;
+    font-weight: normal;
+    position: absolute;
+    right: -40px;
+    top: -55px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+  .popup__close-button:hover {
+    opacity: 0.6;
+  }
+@media screen and (max-width: 400px){
+  .popup__close-button {
+    right: -12px;
+    top: -65px;
+    font-weight: 400;
+  }
+}

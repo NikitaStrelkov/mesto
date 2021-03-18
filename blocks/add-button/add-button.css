@@ -1,0 +1,22 @@
+.add-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    font-size: 44px;
+    line-height: 22px;
+    padding: 12px 59px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .add-button:hover {
+    opacity: 0.6;
+  }
+@media screen and (max-width: 425px) {
+  .add-button {
+    padding: 12px 124.5px;
+    
+}

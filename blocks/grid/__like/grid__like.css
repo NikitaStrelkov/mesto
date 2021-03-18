@@ -1,0 +1,19 @@
+.grid__like {
+    border: none;
+    background: url(../../../images/grid__like.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 19px;
+    width: 22px;
+    position: relative;
+    right: 20px;
+    transition: 0.2s linear;
+  }
+  .grid__like:hover {
+    opacity: 0.5;
+  }
+  .grid__like:active {
+    
+    opacity: 1;
+    background: url(../../../images/grid__like_filled.svg) center no-repeat;
+  }

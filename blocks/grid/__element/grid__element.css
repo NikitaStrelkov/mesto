@@ -1,0 +1,13 @@
+.grid__element {
+    display: grid;
+    grid-template-rows: 1fr, 79px;
+    min-height: 361px;
+    max-width: 282px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }

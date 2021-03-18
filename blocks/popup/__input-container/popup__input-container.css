@@ -1,0 +1,12 @@
+.form__input-container {
+    width: 358px;
+    margin: 30px auto 0;
+    border-style: none;
+    box-sizing: border-box;
+    padding: 0;
+  }
+@media screen and (max-width:480px) {
+  .form__input-container {
+    width: 238px;
+  }
+}

@@ -1,0 +1,21 @@
+.popup__content {
+    font-family: 'Inter', Arial, sans-serif;
+    position: absolute;
+    top: 195px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    max-width: 430px;
+    max-height: 330px;
+    background-color: white;
+    padding: 34px 36px 37px;
+    box-sizing: border-box;
+  }
+
+@media screen and (max-width: 480px) {
+  .popup__content {
+    max-width: 282px;
+    max-height: 322px;
+    padding: 25px 22px;
+  }
+}
