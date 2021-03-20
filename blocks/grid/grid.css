@@ -8,48 +8,16 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    justify-content: center;
   }
   @media (max-width: 920px) {
     .grid {
         grid-template-columns: repeat(2, 282px);
-        padding: 0 15%;
-    }
-  } 
-  @media (max-width: 840px) {
-    .grid {
-        padding: 0 10%;
-    }
-  } 
-  @media (max-width: 725px) {
-    .grid {
-        padding: 0 5%;
-    }
-  } 
-  @media (max-width: 645px) {
-    .grid {
-        padding: 0 2%;
-    }
-  } 
-  
-  @media (max-width: 620px) {
-    .grid {
-      padding: 0;
         
     }
   }
   @media (max-width: 580px) {
     .grid {
-      padding: 0 20%;
-        grid-template-columns: repeat(1, 282px);
-    }
-  }
-  @media (max-width: 470px) {
-    .grid {
-      padding: 0 10%; 
-    }
-  } 
-  @media (max-width: 350px) {
-    .grid {
-      padding: 0 5.5%;
+     grid-template-columns: repeat(1, 282px);
     }
   }

@@ -1,6 +1,8 @@
 .profile__subtitle {
     font-size: 18px;
     line-height: 22px;
+    
+    overflow: hidden;
 }
 @media screen and (max-width: 700px) {
   .profile__subtitle {
