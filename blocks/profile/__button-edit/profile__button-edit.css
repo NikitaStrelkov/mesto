@@ -1,4 +1,4 @@
-.edit-button {
+.profile__button-edit {
     background-color: transparent;
     box-sizing: border-box;
     position: relative;
@@ -10,6 +10,6 @@
     cursor: pointer;
     z-index: 0;
   }
-  .edit-button:hover {
+  .profile__button-edit:hover {
     opacity: 0.6;
   }

@@ -1,6 +1,6 @@
 
 let popup = document.querySelector('.popup');
-let openPopupBtn = document.querySelector('.edit-button')
+let openPopupBtn = document.querySelector('.profile__button-edit')
 let closePopupBtn = document.querySelector('.popup__close-button');
 let popupContent = document.querySelector('.popup__content');
 
@@ -40,10 +40,10 @@ let profileName = document.querySelector('.profile__title');
 let profileJob = document.querySelector('.profile__subtitle');
 
 // Находим форму в DOM
-let formElement = document.querySelector('.popup__edit');
+let formElement = document.querySelector('.popup__form');
 // Находим поля формы в DOM
-let nameInput = document.querySelector('.popup__item_name');
-let jobInput = document.querySelector('.popup__item_job');
+let nameInput = document.querySelector('.popup__item_type_name');
+let jobInput = document.querySelector('.popup__item_type_job');
 
 
 // Обработчик «отправки» формы, хотя пока
