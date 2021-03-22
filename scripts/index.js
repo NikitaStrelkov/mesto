@@ -6,6 +6,14 @@ let popupContent = document.querySelector('.popup__content');
 
 let saveBtn = document.querySelector('.popup__button');
 
+let profileName = document.querySelector('.profile__title');
+let profileJob = document.querySelector('.profile__subtitle');
+
+let formElement = document.querySelector('.popup__form');
+
+let nameInput = document.querySelector('.popup__item_type_name');
+let jobInput = document.querySelector('.popup__item_type_job');
+
 function openPopup() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;    
@@ -15,39 +23,6 @@ function closePopup() {
     popup.classList.remove('popup_visible');
 }
 
-openPopupBtn.addEventListener('click', function(event){
-    openPopup();
-});
-
-closePopupBtn.addEventListener('click', function(event){
-    closePopup();
-});
-
-/*saveBtn.addEventListener('click', function(event) {
-    closePopup();
-    event.stopImmediatePropagation();
-});*/
-
-popupContent.addEventListener('click', function(event) {
-    event.stopImmediatePropagation();
-}); 
-
-
-
-
-let profileName = document.querySelector('.profile__title');
-
-let profileJob = document.querySelector('.profile__subtitle');
-
-// Находим форму в DOM
-let formElement = document.querySelector('.popup__form');
-// Находим поля формы в DOM
-let nameInput = document.querySelector('.popup__item_type_name');
-let jobInput = document.querySelector('.popup__item_type_job');
-
-
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
 function formSubmitHandler (evt) {
     evt.preventDefault();
     closePopup();
@@ -58,9 +33,20 @@ function formSubmitHandler (evt) {
 
     // Вставьте новые значения с помощью textContent
 }
-
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
+openPopupBtn.addEventListener('click', function(event){
+    openPopup();
+});
+
+closePopupBtn.addEventListener('click', function(event){
+    closePopup();
+});
+
+popupContent.addEventListener('click', function(event) {
+    event.stopImmediatePropagation();
+}); 
+
 formElement.addEventListener('submit', formSubmitHandler);
 
 

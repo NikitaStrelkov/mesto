@@ -1,25 +1,15 @@
 .popup__content {
     font-family: 'Inter', Arial, sans-serif;
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    
-    transform: translateX(-50%);
     border-radius: 10px;
     max-width: 430px;
-    max-height: 330px;
     background-color: white;
     padding: 34px 36px 37px;
     box-sizing: border-box;
-    
-    
   }
 
 @media screen and (max-width: 480px) {
   .popup__content {
-    top:123px;
-    min-width: 282px;
-    min-height: 322px;
+    max-width: 282px;
     padding: 25px 22px;
   }
 }
