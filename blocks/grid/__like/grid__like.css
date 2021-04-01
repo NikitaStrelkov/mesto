@@ -8,6 +8,7 @@
     position: relative;
     transition: 0.2s linear;
     margin-right: 0;
+    outline: none;
   }
   .grid__like:hover {
     opacity: 0.5;

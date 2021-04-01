@@ -1,5 +1,6 @@
 .grid__element {
     display: grid;
+    position: relative;
     grid-template-rows: 1fr, 79px;
     max-width: 282px;
     margin: 0;

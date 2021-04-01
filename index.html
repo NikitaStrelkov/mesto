@@ -8,17 +8,29 @@
 </head>
 <body class="page">
 
-  <div class="popup"> 
-    <button class="popup__close-button" type="button" value="OK">+</button>
+  <div id="popup" class="popup popup_type_edit"> 
+    <button class="popup__close-button popup__close-button_edit" type="button" value="OK">+</button>
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
                 <form class="popup__form" name='input'>
-                    <input type='text' class='popup__item popup__item_type_name' value="" name="name">
-                    <input type='text' class='popup__item popup__item_type_job' value="" name="job">       
+                    <input type='text' class='popup__item popup__item_type_name' value="" name="name" required>
+                    <input type='text' class='popup__item popup__item_type_job' value="" name="job" required>       
                     <button class="popup__button" type="submit" value="OK">Сохранить</button>       
                 </form>     
         </div> 
   </div>  
+
+  <div id="popupAdd" class="popup popup_type_add"> 
+    <button class="popup__close-button popup__close-button_add" type="button" value="OK">+</button>
+        <div class="popup__content">
+            <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form" name='add-Card'>
+                    <input type='text' placeholder="Название" class='popup__item popup__item_type_title-card' value="" name="name" required>
+                    <input type='text' placeholder="Ссылка на картинку" class='popup__item popup__item_type_link_card' value="" name="job" required>       
+                    <button class="popup__button" type="submit" value="OK">Создать</button>       
+                </form>     
+        </div> 
+  </div>
 
   <div class="page__container">  
     <header class="header">
@@ -39,48 +51,72 @@
   
             <section class="grid">
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button-cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button-basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Карачаевск</h2>
                         <button class="grid__like" type="button" value="OK"></button>                       
                     </div>
                 </div>
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Гора Эльбрус</h2>
                         <button class="grid__like" type="button"></button> 
                     </div>
                 </div>
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/домбай.png" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Домбай</h2>
                         <button class="grid__like" type="button"></button> 
                     </div>
                 </div>
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Гора Эльбрус</h2>
                         <button class="grid__like" type="button"></button> 
                     </div>
                 </div>
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/домбай.png" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Домбай</h2>
                         <button class="grid__like" type="button"></button> 
                     </div>
                 </div>
                 <div class="grid__element">
+                    <button class="grid__delete-button" type="button">
+                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
+                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                    </button>
                     <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
-                    <button class="grid__delete-button" type="button"></button>
+                    
                     <div class="grid__capture">
                         <h2 class="grid__text">Карачаево-Черкессия</h2>
                         <button class="grid__like" type="button"></button> 
