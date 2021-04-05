@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
-
+<!--Попап редактирования-->
   <div id="popup" class="popup popup_type_edit"> 
     <button class="popup__close-button popup__close-button_edit" type="button" value="OK">+</button>
         <div class="popup__content">
@@ -19,7 +19,7 @@
                 </form>     
         </div> 
   </div>  
-
+<!-- Попап добавления -->
   <div id="popupAdd" class="popup popup_type_add"> 
     <button class="popup__close-button popup__close-button_add" type="button" value="OK">+</button>
         <div class="popup__content">
@@ -31,7 +31,28 @@
                 </form>     
         </div> 
   </div>
-
+<!-- Попап картинки -->
+  <div class="popup popup_type_img">
+    <div class="popup__wrap">
+      <img src="." alt="." class="popup__img">
+      <p class="popup__text-img"></p>
+      <button type="button" class="popup__close-button"></button>
+    </div>
+  </div>
+<!-- Template -->
+<template id="grid-template">
+    <div class="grid__element">
+        <button class="grid__delete-button" type="button">
+            <img src="./images/delete-icon.svg" alt="удалить">
+        </button>
+        <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">     
+        <div class="grid__capture">
+            <h2 class="grid__text">Карачаевск</h2>
+            <button class="grid__like" type="button" value="OK"></button>                       
+        </div>
+    </div>
+  </template>
+  
   <div class="page__container">  
     <header class="header">
         <img class="header__logo" src="images/header__logo.svg" alt="лого">
@@ -48,12 +69,13 @@
                     </div>
                 <button class="profile__button-add" type="button" value="OK"></button>
             </section>
-  
-            <section class="grid">
+            <section class="photos">
+                <ul class="grid-places"></ul>
+              </section>
+            <!--<section class="grid">
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button-cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button-basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
                     
@@ -64,8 +86,7 @@
                 </div>
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
                     
@@ -76,8 +97,7 @@
                 </div>
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/домбай.png" alt="картинка">
                     
@@ -88,8 +108,7 @@
                 </div>
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
                     
@@ -100,8 +119,7 @@
                 </div>
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/домбай.png" alt="картинка">
                     
@@ -112,8 +130,7 @@
                 </div>
                 <div class="grid__element">
                     <button class="grid__delete-button" type="button">
-                        <img class="grid__delete-button_cap" src="./images/delete_icon.svg">
-                        <img class="grid__delete-button_basket" src="images/basket.svg">
+                        <img src="./images/delete-icon.svg" alt="удалить">
                     </button>
                     <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
                     
@@ -122,7 +139,7 @@
                         <button class="grid__like" type="button"></button> 
                     </div>
                 </div>
-            </section>
+            </section>-->
     </main>
     <footer class="footer">   
         <p class="footer__copyright">© 2020. Nikita Strelkov</p>
