@@ -39,10 +39,6 @@ function openPopupAdd() {
 function closePopupAdd() {
     popupTypeAdd.classList.remove('popup_visible');
 }
-
-
-
-
 function formSubmitHandler (evt) {
     evt.preventDefault();
     closePopupEdit();
