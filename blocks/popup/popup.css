@@ -10,6 +10,6 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  transition: opacity 0.3s linear, visibility  linear;
+  transition: opacity 0.3s linear, visibility 0.5 linear;
   opacity: 0;
   }
