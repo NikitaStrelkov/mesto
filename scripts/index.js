@@ -22,7 +22,7 @@ let jobInput = document.querySelector('.popup__item_type_job');
 const popupBigImage = document.querySelector('.popup__type-img');
 const popupBigImageImage = document.querySelector('.popup__img');
 const popupBigImageText = document.querySelector('.popup__text-img');
-const popupBigImageClose = document.querySelector('.popup__close-button');
+const popupBigImageClose = document.querySelector('.popup__close-button_type-img');
 
 function openPopupEdit() {
     nameInput.value = profileName.textContent;
@@ -39,6 +39,18 @@ function openPopupAdd() {
 function closePopupAdd() {
     popupTypeAdd.classList.remove('popup_visible');
 }
+
+function openPopupBigImage () {
+  popupBigImage.classList.add('popup_visible');
+}
+
+function closePopupBigImage () {
+  popupBigImage.classList.remove('popup_visible');
+}
+
+popupBigImageClose.addEventListener('click', function(event){
+  closePopupBigImage();
+});
 function formSubmitHandler (evt) {
     evt.preventDefault();
     closePopupEdit();
@@ -112,14 +124,6 @@ const formSubmitAddHandler = (event) => {
     renderCard(createCard(textCardSubmit, linkCardSubmit));
     closePopupAdd(popupTypeAdd);
     popupAddForm.reset();
-    }
-
-    function openPopupBigImage () {
-      popupBigImage.classList.add('popup_visible');
-    }
-    
-    function closePopupBigImage () {
-      popupBigImage.classList.remove('popup_visible');
     }
 
     function createCard(textCardSubmit, linkCardSubmit) {
