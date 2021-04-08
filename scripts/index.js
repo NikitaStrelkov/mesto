@@ -40,12 +40,7 @@ function closePopupAdd() {
     popupTypeAdd.classList.remove('popup_visible');
 }
 
-function openPopupBigImage () {
-  popupBigImage.classList.add('popup_visible');
-}
-function closePopupBigImage () {
-  popupBigImage.classList.remove('popup_visible');
-}
+
 
 
 function formSubmitHandler (evt) {
@@ -121,6 +116,14 @@ const formSubmitAddHandler = (event) => {
     renderCard(createCard(textCardSubmit, linkCardSubmit));
     closePopupAdd(popupTypeAdd);
     popupAddForm.reset();
+    }
+
+    function openPopupBigImage () {
+      popupBigImage.classList.add('popup_visible');
+    }
+    
+    function closePopupBigImage () {
+      popupBigImage.classList.remove('popup_visible');
     }
 
     function createCard(textCardSubmit, linkCardSubmit) {
