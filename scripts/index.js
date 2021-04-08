@@ -20,9 +20,9 @@ let nameInput = document.querySelector('.popup__item_type_name');
 let jobInput = document.querySelector('.popup__item_type_job');
 
 const popupBigImage = document.querySelector('.popup_type_img');
-const popupBigImageImage = popupBigImage.querySelector('.popup__img');
-const popupBigImageText = popupBigImage.querySelector('.popup__text-img');
-const popupBigImageClose = popupBigImage.querySelector('.popup__close-button');
+const popupBigImageImage = document.querySelector('.popup__img');
+const popupBigImageText = document.querySelector('.popup__text-img');
+const popupBigImageClose = document.querySelector('.popup__close-button');
 
 function openPopupEdit() {
     nameInput.value = profileName.textContent;
@@ -39,6 +39,14 @@ function openPopupAdd() {
 function closePopupAdd() {
     popupTypeAdd.classList.remove('popup_visible');
 }
+
+function openPopupBigImage () {
+  popupBigImage.classList.add('popup_visible');
+}
+function closePopupBigImage () {
+  popupBigImage.classList.remove('popup_visible');
+}
+
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -100,7 +108,7 @@ const initialCards = [
 const popupImage = document.querySelector('.popup_type_img');
 const popupImageClose = popupImage.querySelector('.popup__close-button');
 const popupImageImage = popupImage.querySelector('.popup__img');
-const popupImageText = popupImage.querySelector('.popup__title-img');
+const popupImageText = popupImage.querySelector('.popup__text-img');
 const textCardInput = popupAdd.querySelector('.popup__item_type_title-card');
 const linkCardInput = popupAdd.querySelector('.popup__item_type_link_card');
 
@@ -112,7 +120,7 @@ const formSubmitAddHandler = (event) => {
     const linkCardSubmit = linkCardInput.value;
     renderCard(createCard(textCardSubmit, linkCardSubmit));
     closePopupAdd(popupTypeAdd);
-    popupAddForm.reset(); // очищение поля формы для след. добавления
+    popupAddForm.reset();
     }
 
     function createCard(textCardSubmit, linkCardSubmit) {
@@ -124,9 +132,9 @@ const formSubmitAddHandler = (event) => {
         const AddImage = templateCardElement.querySelector('.grid__image');
         const AddDeleteIcon = templateCardElement.querySelector('.grid__delete-button');
       
-        //Слушатели
+        
           AddlikeButton.addEventListener('click', function() {
-            AddlikeButton.classList.toggle('grid__like-liked');
+            AddlikeButton.classList.toggle('grid__like_filled');
           })
       
           AddDeleteIcon.addEventListener('click', function() {
@@ -134,7 +142,7 @@ const formSubmitAddHandler = (event) => {
           })
       
           AddImage.addEventListener('click', function () {
-            openPopup(popupBigImage);
+            openPopupBigImage();
             popupBigmageImage.src = linkCardSubmit;
             popupBigImageText.textContent = textCardSubmit;
           });
@@ -144,15 +152,12 @@ const formSubmitAddHandler = (event) => {
           return templateCardElement;
         }
       
-        // Рендеринг
         function renderCard(card) {
           photoCard.prepend(card);
         }
       
-        // Обработчик формы добавления карточки
         popupAddForm.addEventListener('submit', formSubmitAddHandler);
         
-        // Генерация
         const initialTemplate = initialCards.forEach(item => {
         renderCard(createCard(item.name, item.link));
         });

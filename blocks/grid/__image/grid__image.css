@@ -1,3 +1,8 @@
 .grid__image {
     margin: 0;
+    height: 282px;
+    width: 282px;
+}
+.grid__image:hover {
+    cursor: pointer;
 }

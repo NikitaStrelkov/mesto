@@ -40,7 +40,7 @@
 @import url('../blocks/grid/__delete-button/grid__delete-button.css');
 @import url('../blocks/grid/__delete-button/_cap/grid__delete-button_cap.css');
 @import url('../blocks/grid/__delete-button/_basket/grid__delete-button_basket.css');
-@import url('../blocks/grid/__like/-liked/grid__like-liked.css'); 
+@import url('../blocks/grid/__like/_filled/grid__like-filled.css'); 
 @import url('../blocks/grid-places/grid-places.css'); 
 
 @import url('../blocks/footer/footer.css');
