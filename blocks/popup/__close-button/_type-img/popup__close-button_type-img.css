@@ -1,12 +1,12 @@
 .popup__close-button_type-img {
     position: absolute;
-    top: -70px ;
-    right: -5px;
+    top: -60px ;
+    right: -45px;
 }
 @media screen and (max-width: 466px){
     .popup__close-button_type-img {
-      right: ;
-      top: ;
+      right: -5px;
+      top: -70px;
       font-weight: 400;
     }
   }
