@@ -1,4 +1,4 @@
-.popup__image {
-    max-width: 75%;
-    max-height: 75%;
+.popup__img {
+    max-width: 75vw;
+    max-height: 75vh;
   }
