@@ -1,6 +1,6 @@
 .popup__close-button_type-img {
     position: absolute;
-    top: -60px ;
+    top: -60px;
     right: -45px;
 }
 @media screen and (max-width: 466px){
