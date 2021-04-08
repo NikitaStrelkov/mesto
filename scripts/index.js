@@ -19,7 +19,7 @@ let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.popup__item_type_name');
 let jobInput = document.querySelector('.popup__item_type_job');
 
-const popupBigImage = document.querySelector('.popup__type-img');
+const popupBigImage = document.querySelector('.popup__type_img');
 const popupBigImageImage = document.querySelector('.popup__img');
 const popupBigImageText = document.querySelector('.popup__text-img');
 const popupBigImageClose = document.querySelector('.popup__close-button_type-img');
@@ -108,7 +108,7 @@ const initialCards = [
     }
   ];
 
-const popupImage = document.querySelector('.popup__type-img');
+const popupImage = document.querySelector('.popup__type_img');
 const popupImageClose = popupImage.querySelector('.popup__close-button');
 const popupImageImage = popupImage.querySelector('.popup__img');
 const popupImageText = popupImage.querySelector('.popup__text-img');
