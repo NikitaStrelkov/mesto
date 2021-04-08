@@ -11,6 +11,7 @@
 @import url('../blocks/popup/__text-img/popup__text-img.css');
 @import url('../blocks/popup/__wrap/popup__wrap.css');
 @import url('../blocks/popup/__type-img/popup__type-img.css');
+@import url('../blocks/popup/__close-button/_type-img/popup__close-button_type-img.css');
 
 @import url('../blocks/popup/__item/popup__item.css');
 @import url('../blocks/popup/__button/popup__button.css');

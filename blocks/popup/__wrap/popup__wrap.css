@@ -1,5 +1,6 @@
 .popup__wrap {
-    position: absolute;
+  font-family: 'Inter', Arial, sans-serif;
+    position: relative;
     top: auto;
     left: auto;
     max-width: 75%;
