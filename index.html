@@ -6,6 +6,7 @@
   <title>Mesto Russia</title>
   <link rel="stylesheet" href="pages/index.css">
 </head>
+
 <body class="page">
 <!--Попап редактирования-->
   <div id="popup" class="popup popup_type_edit"> 
@@ -19,6 +20,7 @@
                 </form>     
         </div> 
   </div>  
+
 <!-- Попап добавления -->
   <div id="popupAdd" class="popup popup_type_add"> 
     <button class="popup__close-button popup__close-button_add" type="button" value="OK">+</button>
@@ -31,6 +33,7 @@
                 </form>     
         </div> 
   </div>
+
 <!-- Попап картинки -->
   <div class="popup popup_type_img">
     <div class="popup__wrap">
@@ -39,6 +42,7 @@
       <button class="popup__close-button popup__close-button_type-img" type="button" value="OK">+</button>
     </div>
   </div>
+
 <!-- Template -->
 <template id="grid-template">
     <div class="grid__element">
@@ -57,6 +61,7 @@
     <header class="header">
         <img class="header__logo" src="images/header__logo.svg" alt="лого">
     </header>
+
     <main class="content">
             <section class="profile">
                 <img class="profile__avatar" src="images/avatar.jpg" alt="аватар">
@@ -71,80 +76,15 @@
             </section>
             <section class="photos">
                 <ul class="grid-places"></ul>
-              </section>
-            <!--<section class="grid">
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Карачаевск</h2>
-                        <button class="grid__like" type="button" value="OK"></button>                       
-                    </div>
-                </div>
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Гора Эльбрус</h2>
-                        <button class="grid__like" type="button"></button> 
-                    </div>
-                </div>
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/домбай.png" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Домбай</h2>
-                        <button class="grid__like" type="button"></button> 
-                    </div>
-                </div>
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/эльбрус.png" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Гора Эльбрус</h2>
-                        <button class="grid__like" type="button"></button> 
-                    </div>
-                </div>
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/домбай.png" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Домбай</h2>
-                        <button class="grid__like" type="button"></button> 
-                    </div>
-                </div>
-                <div class="grid__element">
-                    <button class="grid__delete-button" type="button">
-                        <img src="./images/delete-icon.svg" alt="удалить">
-                    </button>
-                    <img class="grid__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="картинка">
-                    
-                    <div class="grid__capture">
-                        <h2 class="grid__text">Карачаево-Черкессия</h2>
-                        <button class="grid__like" type="button"></button> 
-                    </div>
-                </div>
-            </section>-->
+              </section>   
     </main>
+
     <footer class="footer">   
         <p class="footer__copyright">© 2020. Nikita Strelkov</p>
     </footer>
+
   </div>  
+<script src="./scripts/initial-сards.js"></script>
 <script src="./scripts/index.js"></script>
 </body>
 </html>
