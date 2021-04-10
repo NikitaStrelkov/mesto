@@ -29,9 +29,9 @@ function togglePopup(popup) {
 }
 
 openPopupEditBtn.addEventListener('click', () => { 
-  togglePopup(popupTypeEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  togglePopup(popupTypeEdit);
 })
 addCardBtn.addEventListener('click', () => togglePopup(popupTypeAdd))
 
@@ -42,8 +42,10 @@ popupBigImageClose.addEventListener('click',() => togglePopup(popupBigImage))
 const popupAddForm = popupTypeAdd.querySelector('.popup__form')
 
 function formSubmitHandler (evt) {
-    evt.preventDefault();
-    togglePopup(popupTypeEdit);
+  evt.preventDefault();
+  togglePopup(popupTypeEdit);
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
