@@ -10,8 +10,6 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  transition-property: opacity;
-  transition-duration: 1s, 0s;
-  transition-delay: 0s, 1s;
   opacity: 0;
+  transition:  0.5s  linear 0s;
   }
