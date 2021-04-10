@@ -1,5 +1,3 @@
-const popupContent = document.querySelector('.popup__content')
-
 const profileName = document.querySelector('.profile__title')
 const profileJob = document.querySelector('.profile__subtitle')
 
@@ -11,7 +9,6 @@ const jobInput = document.querySelector('.popup__item_type_job')
 
 const popupBigImageImage = document.querySelector('.popup__img')
 const popupBigImageText = document.querySelector('.popup__text-img')
-
 
 //popups
 const popupTypeEdit = document.querySelector('.popup_type_edit')
@@ -27,46 +24,33 @@ const closePopupEditBtn = popupTypeEdit.querySelector('.popup__close-button')
 const closePopupAddBtn = popupTypeAdd.querySelector('.popup__close-button')
 const popupBigImageClose = popupBigImage.querySelector('.popup__close-button')
 
-nameInput.value = profileName.textContent;
-jobInput.value = profileJob.textContent; 
-
 function togglePopup(popup) {
   popup.classList.toggle('popup_visible')
 }
 
-openPopupEditBtn.addEventListener('click', () => togglePopup(popupTypeEdit))
+openPopupEditBtn.addEventListener('click', () => { 
+  togglePopup(popupTypeEdit);
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
+})
 addCardBtn.addEventListener('click', () => togglePopup(popupTypeAdd))
 
 closePopupEditBtn.addEventListener('click', () => togglePopup(popupTypeEdit))
 closePopupAddBtn.addEventListener('click', () => togglePopup(popupTypeAdd))
+popupBigImageClose.addEventListener('click',() => togglePopup(popupBigImage))
 
 const popupAddForm = popupTypeAdd.querySelector('.popup__form')
-
-function openPopupBigImage () {
-  popupBigImage.classList.add('popup_visible');
-}
-
-function closePopupBigImage () {
-  popupBigImage.classList.remove('popup_visible');
-}
-
-popupBigImageClose.addEventListener('click', function(event){
-  closePopupBigImage();
-});
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
     togglePopup(popupTypeEdit);
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-const popupImage = document.querySelector('.popup_type_img');
-const textCardInput = popupAdd.querySelector('.popup__item_type_title-card');
-const linkCardInput = popupAdd.querySelector('.popup__item_type_link-card');
-const photoCard = document.querySelector('.grid-places');
+const textCardInput = popupTypeAdd.querySelector('.popup__item_type_title-card')
+const linkCardInput = popupTypeAdd.querySelector('.popup__item_type_link-card')
+const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
     event.preventDefault();
@@ -94,8 +78,9 @@ function createCard(textCardSubmit, linkCardSubmit) {
     iconDeleteAdd.addEventListener('click', () => templateCardElement.remove())
   
     imageAdd.addEventListener('click', function () {
-    openPopupBigImage();
+    togglePopup(popupBigImage);
     popupBigImageImage.src = linkCardSubmit;
+    popupBigImageImage.alt = linkCardSubmit
     popupBigImageText.textContent = textCardSubmit;
     });
     templateCardText.textContent = textCardSubmit;
