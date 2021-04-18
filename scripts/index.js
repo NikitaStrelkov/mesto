@@ -3,8 +3,8 @@ const profileJob = document.querySelector('.profile__subtitle')
 
 const popupForm = document.querySelector('.popup__form')
 
-const nameInput = document.querySelector('.popup__item_type_name')
-const jobInput = document.querySelector('.popup__item_type_job')
+const nameInput = document.querySelector('.popup__input_type_name')
+const jobInput = document.querySelector('.popup__input_type_job')
 
 const popupBigImageImage = document.querySelector('.popup__img')
 const popupBigImageText = document.querySelector('.popup__text-img')
@@ -81,8 +81,8 @@ popupForm.addEventListener('submit', formSubmitHandler);
 
 
 
-const textCardInput = popupTypeAdd.querySelector('.popup__item_type_title-card')
-const linkCardInput = popupTypeAdd.querySelector('.popup__item_type_link-card')
+const textCardInput = popupTypeAdd.querySelector('.popup__input_type_title-card')
+const linkCardInput = popupTypeAdd.querySelector('.popup__input_type_link-card')
 const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
