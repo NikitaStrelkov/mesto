@@ -1,7 +1,7 @@
 const profileName = document.querySelector('.profile__title')
 const profileJob = document.querySelector('.profile__subtitle')
 
-const formElement = document.querySelector('.popup__form')
+const popupForm = document.querySelector('.popup__form')
 
 const nameInput = document.querySelector('.popup__item_type_name')
 const jobInput = document.querySelector('.popup__item_type_job')
@@ -77,7 +77,7 @@ function formSubmitHandler (evt) {
   profileJob.textContent = jobInput.value;
 }
 
-formElement.addEventListener('submit', formSubmitHandler);
+popupForm.addEventListener('submit', formSubmitHandler);
 
 
 

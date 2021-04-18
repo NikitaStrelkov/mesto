@@ -15,10 +15,10 @@
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
                 <form class="popup__form" name="edit-Profile" novalidate>
-                    <input type='text' class='popup__item popup__item_type_name' value="" name="title-card" id="name-input" minlength="2" maxlength="40" placeholder="Введите ваше имя" required>
-                    <span class='popup__item-error' id='name-item-error'></span>
-                    <input type='text' class='popup__item popup__item_type_job' value="" minlength="2" maxlength="200" placeholder="Введите вашу деятельность" name="job" required>    
-                    <span class='popup__item-error' id='profession-item-error'></span>   
+                    <input type='text' class='popup__input popup__item_type_name' value="" name="title-card" id="name-input" minlength="2" maxlength="40" placeholder="Введите ваше имя" required>
+                    <span class='popup__input-error' id='name-input-error'></span>
+                    <input type='text' class='popup__input popup__item_type_job' value="" minlength="2" maxlength="200" placeholder="Введите вашу деятельность" name="job" required>    
+                    <span class='popup__input-error' id='profession-input-error'></span>   
                     <input class="popup__save-button" type="submit" name="submit" value="Coxpaнить"></input>       
                 </form>     
         </div> 
@@ -30,10 +30,10 @@
         <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
                 <form class="popup__form" name="add-Card" novalidate>
-                    <input type='text' placeholder="Название" class='popup__item popup__item_type_title-card' minlength="2" maxlength="30" value="" name="title-card" id="title-input" required>
-                    <span class='popup__item-error' id='title-item-error'>Вы пропустили это поле.</span>
-                    <input type="url" placeholder="Ссылка на картинку" class='popup__item popup__item_type_link-card' value=""name="link-card" id="link-input" required>  
-                    <span class='popup__item-error' id='link-item-error'>Вы пропустили это поле.</span>     
+                    <input type='text' placeholder="Название" class='popup__input popup__item_type_title-card' minlength="2" maxlength="30" value="" name="title-card" id="title-input" required>
+                    <span class='popup__input-error' id='title-input-error'>Вы пропустили это поле.</span>
+                    <input type="url" placeholder="Ссылка на картинку" class='popup__input popup__item_type_link-card' value=""name="link-card" id="link-input" required>  
+                    <span class='popup__input-error' id='link-input-error'>Вы пропустили это поле.</span>     
                     <input class="popup__save-button" type="submit" value="Создать" name="submit"></input>       
                 </form>     
         </div> 

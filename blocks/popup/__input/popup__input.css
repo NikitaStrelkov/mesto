@@ -1,4 +1,4 @@
-.popup__item {
+.popup__input {
     margin-top: 30px;
     border: 0;
     width: 100%;
@@ -11,9 +11,9 @@
     padding: 0;
     padding-bottom: 10px;
   }
-  .popup__item:first-child {
+  .popup__input:first-child {
     margin-top: 0;
   }
-  .popup__item:focus {
+  .popup__input:focus {
     outline-color:lightskyblue;
   }

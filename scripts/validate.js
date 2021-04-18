@@ -1,13 +1,12 @@
 const settingsForm = {
     formSelector: '.popup__form',
-    inputSelector: '.popup__item',
+    inputSelector: '.popup__input',
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__save-button_unactive',
-    inputErrorClass: 'popup__item_type_error',
-    errorClass: 'popup__item-error_active'
+    inputErrorClass: 'popup__input-error',
+    errorClass: 'popup__input-error_active'
 };
 
-// Показать ошибку
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.add(settingsForm.inputErrorClass);
@@ -15,7 +14,6 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   errorElement.classList.add(settingsForm.errorClass);
 };
 
-// Cкрыть ошибку
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.remove(settingsForm.inputErrorClass);
@@ -23,7 +21,6 @@ const hideInputError = (formElement, inputElement) => {
   errorElement.classList.remove(settingsForm.errorClass);
 };
 
-// Проверить валидность формы
 const checkInputValidity = (formElement, inputElement) => {
   const isInputNotValid = !inputElement.validity.valid;
   if (isInputNotValid) {
@@ -34,7 +31,6 @@ const checkInputValidity = (formElement, inputElement) => {
   }
 };
 
-// Переключение кнопки
 const toggleButtonState = (inputList, buttonElement) => {
   const isNotValidInput = inputList.some((inputElement) => !inputElement.validity.valid);
   if (isNotValidInput) {
@@ -46,7 +42,6 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 }
 
-//Функция для навешивания событий на все формы
 const setEventListeners = (formElement) => {
   formElement.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -61,7 +56,6 @@ const setEventListeners = (formElement) => {
   });
 };
 
-// Валидация
 const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll(settingsForm.formSelector));
   formList.forEach(setEventListeners);
