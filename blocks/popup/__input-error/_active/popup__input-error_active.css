@@ -1,5 +1,4 @@
 .popup__input-error_active {
-  border-bottom: 1px solid #FF0000;
-    display: block;
-    color: red;
+  opacity: 1;
+  color: red;
   }
