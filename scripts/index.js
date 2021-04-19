@@ -23,24 +23,24 @@ const closePopupEditBtn = popupTypeEdit.querySelector('.popup__close-button')
 const closePopupAddBtn = popupTypeAdd.querySelector('.popup__close-button')
 const popupBigImageClose = popupBigImage.querySelector('.popup__close-button')
 
-// Обработчик изначального заполнения значений полей формы / открытие попапа редактирования
-const openPopup = (popup) => {
-  popup.classList.toggle('popup_visible');
-  popup.parentNode.addEventListener('keydown', closePopupEscKey);
+// открытие popup
+function openPopup(popup) {
+  popup.classList.add('popup_visible');
+  document.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEsc);
 }
-
-// Функция закрытия попапа по нажатию ESC
-const closePopupEscKey = (evt) => {
-if (evt.key === "Escape") {
-  const visiblePopup = document.querySelector('.popup_visible');
-  closePopup(visiblePopup);
-}
-}
-
-// Событие зыкрытия попапа
+//  закрытие popup
 function closePopup(popup) {
-popup.classList.toggle('popup_visible');
-visiblePopup.parentNode.removeEventListener('keydown', closePopupEscKey);
+  popup.classList.remove('popup_visible');
+  document.removeEventListener('keydown', closePopupEsc);
+  document.removeEventListener('click', closePopupOverlay);
+}
+//закрыие popup на Esc
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_visible');
+    closePopup(popup);
+  }
 }
 
 const closePopupOverlay = popup => event => {
@@ -55,6 +55,7 @@ popupBigImage.addEventListener('click', closePopupOverlay(popupBigImage));
 
 function togglePopup(popup) {
   popup.classList.toggle('popup_visible')
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 openPopupEditBtn.addEventListener('click', () => { 
@@ -62,6 +63,7 @@ openPopupEditBtn.addEventListener('click', () => {
   jobInput.value = profileJob.textContent;
   openPopup(popupTypeEdit);
 })
+
 addCardBtn.addEventListener('click', () => openPopup(popupTypeAdd))
 
 closePopupEditBtn.addEventListener('click', () => togglePopup(popupTypeEdit))
@@ -78,8 +80,6 @@ function formSubmitHandler (evt) {
 }
 
 popupForm.addEventListener('submit', formSubmitHandler);
-
-
 
 const textCardInput = popupTypeAdd.querySelector('.popup__input_type_title-card')
 const linkCardInput = popupTypeAdd.querySelector('.popup__input_type_link-card')
@@ -120,6 +120,7 @@ function createCard(textCardSubmit, linkCardSubmit) {
     templateCardImage.src = linkCardSubmit;
     templateCardImage.alt = linkCardSubmit;
     return templateCardElement;
+    
     }
       
     function renderCard(card) {

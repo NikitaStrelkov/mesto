@@ -31,6 +31,8 @@ const checkInputValidity = (formElement, inputElement) => {
   }
 };
 
+
+
 const toggleButtonState = (inputList, buttonElement) => {
   const isNotValidInput = inputList.some((inputElement) => !inputElement.validity.valid);
   if (isNotValidInput) {
@@ -40,7 +42,9 @@ const toggleButtonState = (inputList, buttonElement) => {
     buttonElement.removeAttribute('disabled');
     buttonElement.classList.remove(settingsForm.inactiveButtonClass);
   }
-}
+};
+
+
 
 const setEventListeners = (formElement) => {
   formElement.addEventListener('submit', (event) => {
