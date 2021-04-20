@@ -26,14 +26,13 @@ const popupBigImageClose = popupBigImage.querySelector('.popup__close-button')
 // открытие popup
 function openPopup(popup) {
   popup.classList.add('popup_visible');
-  document.addEventListener('click', closePopupOverlay);
   document.addEventListener('keydown', closePopupEsc);
 }
 //  закрытие popup
 function closePopup(popup) {
   popup.classList.remove('popup_visible');
   document.removeEventListener('keydown', closePopupEsc);
-  document.removeEventListener('click', closePopupOverlay);
+  
 }
 //закрыие popup на Esc
 function closePopupEsc(evt) {
@@ -52,12 +51,6 @@ popupTypeEdit.addEventListener('click', closePopupOverlay(popupTypeEdit));
 popupTypeAdd.addEventListener('click', closePopupOverlay(popupTypeAdd));
 popupBigImage.addEventListener('click', closePopupOverlay(popupBigImage));
 
-
-function togglePopup(popup) {
-  popup.classList.toggle('popup_visible')
-  document.addEventListener('keydown', closePopupEsc);
-}
-
 openPopupEditBtn.addEventListener('click', () => { 
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
@@ -66,15 +59,15 @@ openPopupEditBtn.addEventListener('click', () => {
 
 addCardBtn.addEventListener('click', () => openPopup(popupTypeAdd))
 
-closePopupEditBtn.addEventListener('click', () => togglePopup(popupTypeEdit))
-closePopupAddBtn.addEventListener('click', () => togglePopup(popupTypeAdd))
-popupBigImageClose.addEventListener('click',() => togglePopup(popupBigImage))
+closePopupEditBtn.addEventListener('click', () => closePopup(popupTypeEdit))
+closePopupAddBtn.addEventListener('click', () => closePopup(popupTypeAdd))
+popupBigImageClose.addEventListener('click',() => closePopup(popupBigImage))
 
 const popupAddForm = popupTypeAdd.querySelector('.popup__form')
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
-  togglePopup(popupTypeEdit);
+  closePopup(popupTypeEdit);
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
 }
@@ -90,7 +83,7 @@ const formSubmitAddHandler = (event) => {
     const textCardSubmit = textCardInput.value;
     const linkCardSubmit = linkCardInput.value;
     renderCard(createCard(textCardSubmit, linkCardSubmit));
-    togglePopup(popupTypeAdd);
+    closePopup(popupTypeAdd);
     popupAddForm.reset();
     }
 
@@ -111,7 +104,7 @@ function createCard(textCardSubmit, linkCardSubmit) {
     iconDeleteAdd.addEventListener('click', () => templateCardElement.remove())
   
     imageAdd.addEventListener('click', function () {
-    togglePopup(popupBigImage);
+    openPopup(popupBigImage);
     popupBigImageImage.src = linkCardSubmit;
     popupBigImageImage.alt = linkCardSubmit
     popupBigImageText.textContent = textCardSubmit;
