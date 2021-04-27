@@ -125,3 +125,4 @@ function createCard(textCardSubmit, linkCardSubmit) {
     initialCards.forEach(item => {
     renderCard(createCard(item.name, item.link));
     });
+/**/
