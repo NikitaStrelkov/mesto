@@ -60,7 +60,7 @@ const settingsForm = {
   //функция переключение состояние кнопки
   const toggleButtonState = (inputList, buttonElement) => {
       // Если есть хотя бы один невалидный инпут
-      if (hasInvalidInput(inputList)) {                             ////////////////////
+      if (hasInvalidInput(inputList)) {                        
         buttonElement.setAttribute('disabled', true);
         // сделай кнопку неактивной
         buttonElement.classList.add(settingsForm.inactiveButtonClass);
