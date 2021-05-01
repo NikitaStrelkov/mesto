@@ -127,12 +127,6 @@ function renderCard(card) {
   
 popupAddForm.addEventListener('submit', formSubmitAddHandler);
     
-<<<<<<< HEAD
-    initialCards.forEach(item => {
-    renderCard(createCard(item.name, item.link));
-    });
-/**/
-=======
 initialCards.forEach(item => {
   const card = new Card(item, '#grid-template')
   renderCard(card.getCard());
@@ -145,4 +139,3 @@ editFormValidator.enableValidation();
 // Включаем валидацию формы добавления карточки
 const addFormValidator = new FormValidator(settingsForm, popupAddForm);
 addFormValidator.enableValidation();
->>>>>>> new
