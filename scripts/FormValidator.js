@@ -3,6 +3,7 @@ export default class FormValidator {
     this._settings = settings;
     this._form = form;
   }
+  
 // Показать ошибку
 _showInputError(inputElement, errorMessage) {
 const errorElement = this._form.querySelector(`#${inputElement.id}-error`);

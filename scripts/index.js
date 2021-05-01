@@ -120,6 +120,7 @@ const formSubmitAddHandler = (event) => {
 //     return templateCardElement;
     
 //     }
+
       
 function renderCard(card) {
   photoCard.prepend(card);

@@ -6,5 +6,6 @@ const settingsForm = {
     inputErrorClass: 'popup__input-error',
     errorClass: 'popup__input-error_active'
   };
+  
 
   export {settingsForm};
