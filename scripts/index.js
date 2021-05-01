@@ -1,5 +1,7 @@
+import FormValidator from './FormValidator.js';
 import {initialCards} from './initial-сards.js'
-import Card from './card.js'
+import {settingsForm} from './settingsForm.js';
+import Card from './Card.js';
 
 const profileName = document.querySelector('.profile__title')
 const profileJob = document.querySelector('.profile__subtitle')
@@ -119,13 +121,21 @@ const formSubmitAddHandler = (event) => {
     
 //     }
       
-    function renderCard(card) {
-      photoCard.prepend(card);
-    }
+function renderCard(card) {
+  photoCard.prepend(card);
+}
   
-    popupAddForm.addEventListener('submit', formSubmitAddHandler);
+popupAddForm.addEventListener('submit', formSubmitAddHandler);
     
-    initialCards.forEach(item => {
-    const card = new Card(item, '#grid-template')
-    renderCard(card.getCard());
-    });
+initialCards.forEach(item => {
+  const card = new Card(item, '#grid-template')
+  renderCard(card.getCard());
+});
+
+  // Включаем валидацию формы редактрования профиля
+const editFormValidator = new FormValidator(settingsForm, popupForm);
+editFormValidator.enableValidation();
+
+// Включаем валидацию формы добавления карточки
+const addFormValidator = new FormValidator(settingsForm, popupAddForm);
+addFormValidator.enableValidation();
