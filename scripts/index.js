@@ -22,6 +22,7 @@ export const popupBigImage = document.querySelector('.popup_type_img')
 //open popup buttons
 const openPopupEditBtn = document.querySelector('.profile__button-edit')
 const addCardBtn = document.querySelector('.profile__button-add')
+const popupAddSaveButton = popupTypeAdd.querySelector('.popup__save-button');
 
 //close popup buttons
 const closePopupEditBtn = popupTypeEdit.querySelector('.popup__close-button')
@@ -85,11 +86,12 @@ const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
     event.preventDefault();
-    const textCardSubmit = textCardInput.value;
-    const linkCardSubmit = linkCardInput.value;
-    renderCard(createCard(textCardSubmit, linkCardSubmit));
+    const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template')
+    renderCard(card.getCard());
     closePopup(popupTypeAdd);
     popupAddForm.reset();
+    popupAddSaveButton.setAttribute('disabled', true);
+    popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
     }
 
 // function createCard(textCardSubmit, linkCardSubmit) {
