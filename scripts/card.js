@@ -7,11 +7,11 @@ export default class Card {
     this._handleCardClick = handleCardClick;
   }
 
-  _handleLikeIcon() {
+  _handleLikeIcon(evt) {
     evt.target.classList.toggle('grid__like_filled'); /////
   }
 
-  _handleDeleteCard() {
+  _handleDeleteCard(evt) {
     evt.target.closest('.grid__element').remove(); /////
   }
 

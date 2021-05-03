@@ -87,23 +87,16 @@ const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
     event.preventDefault();
-    renderCard(createCard(textCardSubmit, linkCardSubmit));
+    createCard(textCardInput, linkCardInput);
     closePopup(popupTypeAdd);
     popupAddForm.reset();
     popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
     }
 
-function createCard(textCardSubmit, linkCardSubmit) {
+function createCard(textCardInput, linkCardInput) {
   const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template')
   renderCard(card.getCard());
     }
-
-// function handleCardClick(textCardSubmit, linkCardSubmit) {
-//   openPopup(popupBigImage);
-//   popupBigImageImage.src = linkCardSubmit;
-//   popupBigImageImage.alt = linkCardSubmit
-//   popupBigImageText.textContent = textCardSubmit;
-// }
    
 function renderCard(card) {
   photoCard.prepend(card);
@@ -112,7 +105,8 @@ function renderCard(card) {
 popupAddForm.addEventListener('submit', formSubmitAddHandler);
     
 initialCards.forEach(item => {
-  const card = new Card(item, '#grid-template')
+  const cardTemplateSelector = '#grid-template';
+  const card = new Card(item, cardTemplateSelector )
   renderCard(card.getCard());
 });
 
@@ -123,3 +117,10 @@ editFormValidator.enableValidation();
 // Включаем валидацию формы добавления карточки
 const addFormValidator = new FormValidator(settingsForm, popupAddForm);
 addFormValidator.enableValidation();
+
+// function handleCardClick(textCardSubmit, linkCardSubmit) {
+//   openPopup(popupBigImage);
+//   popupBigImageImage.src = linkCardSubmit;
+//   popupBigImageImage.alt = linkCardSubmit
+//   popupBigImageText.textContent = textCardSubmit;
+// }
