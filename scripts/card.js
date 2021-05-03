@@ -1,10 +1,9 @@
 import {openPopup, popupBigImage, popupBigImageImage, popupBigImageText} from './index.js';
 export default class Card {
-  constructor({name, link}, cardTemplateSelector, handleCardClick) {
+  constructor({name, link}, cardTemplateSelector) {
     this._text = name;
     this._link = link;
     this._cardTemplateSelector = cardTemplateSelector;
-    this._handleCardClick = handleCardClick;
   }
 
   _handleLikeIcon(evt) {

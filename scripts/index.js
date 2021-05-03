@@ -61,7 +61,6 @@ openPopupEditBtn.addEventListener('click', () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(popupTypeEdit);
-  editFormValidator.resetValidation();
 })
 
 addCardBtn.addEventListener('click', () => openPopup(popupTypeAdd))
@@ -74,6 +73,7 @@ const popupAddForm = popupTypeAdd.querySelector('.popup__form')
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
+
   closePopup(popupTypeEdit);
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
@@ -86,28 +86,28 @@ const linkCardInput = popupTypeAdd.querySelector('.popup__input_type_link-card')
 const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
-    event.preventDefault();
-    createCard(textCardInput, linkCardInput);
-    closePopup(popupTypeAdd);
-    popupAddForm.reset();
-    popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
-    }
+  event.preventDefault();
+  const card = createCard(textCardInput.value, linkCardInput.value);
+  renderCard(card);
+  closePopup(popupTypeAdd);
+  popupAddForm.reset();
+  popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
+  }
 
-function createCard(textCardInput, linkCardInput) {
-  const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template')
-  renderCard(card.getCard());
-    }
-   
-function renderCard(card) {
-  photoCard.prepend(card);
+function createCard(name, link) {
+  const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template');
+  return card.getCard();
 }
-  
+ 
+function renderCard(card) {
+photoCard.prepend(card);
+}
+
 popupAddForm.addEventListener('submit', formSubmitAddHandler);
-    
+  
 initialCards.forEach(item => {
-  const cardTemplateSelector = '#grid-template';
-  const card = new Card(item, cardTemplateSelector )
-  renderCard(card.getCard());
+  const card = createCard(item.name, item.link);
+  renderCard(card);
 });
 
   // Включаем валидацию формы редактрования профиля
