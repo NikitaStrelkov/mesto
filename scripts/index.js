@@ -61,6 +61,7 @@ openPopupEditBtn.addEventListener('click', () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(popupTypeEdit);
+  editFormValidator.resetValidation();
 })
 
 addCardBtn.addEventListener('click', () => openPopup(popupTypeAdd))
@@ -86,44 +87,24 @@ const photoCard = document.querySelector('.grid-places')
 
 const formSubmitAddHandler = (event) => {
     event.preventDefault();
-    const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template')
-    renderCard(card.getCard());
+    renderCard(createCard(textCardSubmit, linkCardSubmit));
     closePopup(popupTypeAdd);
     popupAddForm.reset();
-    popupAddSaveButton.setAttribute('disabled', true);
     popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
     }
 
-// function createCard(textCardSubmit, linkCardSubmit) {
-//     const templateCard = document.querySelector('#grid-template').content.querySelector('.grid__element');
-//     const templateCardElement = templateCard.cloneNode(true);
-//     const templateCardText = templateCardElement.querySelector('.grid__text');
-//     const templateCardImage = templateCardElement.querySelector('.grid__image');
-//     const likeButtonAdd = templateCardElement.querySelector('.grid__like');
-//     const imageAdd = templateCardElement.querySelector('.grid__image');
-//     const iconDeleteAdd = templateCardElement.querySelector('.grid__delete-button');
-      
-        
-//     likeButtonAdd.addEventListener('click', function() {
-//       likeButtonAdd.classList.toggle('grid__like_filled');
-//       })
-  
-//     iconDeleteAdd.addEventListener('click', () => templateCardElement.remove())
-  
-//     imageAdd.addEventListener('click', function () {
-//     openPopup(popupBigImage);
-//     popupBigImageImage.src = linkCardSubmit;
-//     popupBigImageImage.alt = linkCardSubmit
-//     popupBigImageText.textContent = textCardSubmit;
-//     });
-//     templateCardText.textContent = textCardSubmit;
-//     templateCardImage.src = linkCardSubmit;
-//     templateCardImage.alt = linkCardSubmit;
-//     return templateCardElement;
-    
-//     }
+function createCard(textCardSubmit, linkCardSubmit) {
+  const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template')
+  renderCard(card.getCard());
+    }
 
-      
+// function handleCardClick(textCardSubmit, linkCardSubmit) {
+//   openPopup(popupBigImage);
+//   popupBigImageImage.src = linkCardSubmit;
+//   popupBigImageImage.alt = linkCardSubmit
+//   popupBigImageText.textContent = textCardSubmit;
+// }
+   
 function renderCard(card) {
   photoCard.prepend(card);
 }
