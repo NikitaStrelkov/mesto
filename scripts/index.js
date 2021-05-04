@@ -73,7 +73,6 @@ const popupAddForm = popupTypeAdd.querySelector('.popup__form')
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
-
   closePopup(popupTypeEdit);
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
@@ -91,11 +90,10 @@ const formSubmitAddHandler = (event) => {
   renderCard(card);
   closePopup(popupTypeAdd);
   popupAddForm.reset();
-  popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
   }
 
 function createCard(name, link) {
-  const card = new Card({name: textCardInput.value, link: linkCardInput.value}, '#grid-template');
+  const card = new Card({name, link}, '#grid-template');
   return card.getCard();
 }
  
