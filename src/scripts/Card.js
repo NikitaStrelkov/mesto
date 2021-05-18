@@ -1,9 +1,10 @@
 import {openPopup, popupBigImage, popupBigImageImage, popupBigImageText} from './constants.js';
 export default class Card {
-  constructor({name, link}, cardTemplateSelector) {
+  constructor({name, link}, cardTemplateSelector, handleCardClick) {
     this._text = name;
     this._link = link;
     this._cardTemplateSelector = cardTemplateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _handleLikeIcon(evt) {
@@ -24,9 +25,7 @@ export default class Card {
     this._likeButtonAdd.addEventListener('click', this._handleLikeIcon);
     this._iconDeleteAdd.addEventListener('click', this._handleDeleteCard);
     this._templateCardImage.addEventListener('click', this._handlePreviewPicture);
-    // this._templateCardImage.addEventListener('click', () => {
-    //   this._handleCardClick(this._text, this._link)
-    // });
+    this._image.addEventListener('click', () => this._handleCardClick(this._text, this._link));
   }
 
   getCard() {
