@@ -1,20 +1,8 @@
 .footer {
-    font-family: 'Inter', Arial, sans-serif;
-    display: flex;
-    padding-top: 67px;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 880px;
-    margin: 0 auto;
-    margin-left: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    margin: 67px 0 60px;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 890px) {
     .footer {
-        padding-top: 48px;
-        margin-left: 19px;
-        margin-right: auto;
+        margin: 48px 19px 36px;
     }
 }

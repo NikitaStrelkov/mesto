@@ -1,6 +1,4 @@
 .page {
-    background-color: black;
-    color: #ffffff;
-    font-weight: 400;
-    margin: 0;
-  }
+    max-width: 880px;
+    margin: 0 auto;
+}
