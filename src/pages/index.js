@@ -64,7 +64,7 @@ const formSubmitAddHandler = (data) => {
   const card = createCard(dataCard)
   renderCard(card.getCard());
   popupAddCard.close();
-  addFormValidator.resetForm();
+  // addFormValidator.resetForm();
   // popupAddSaveButton.setAttribute('disabled', true);
   // popupAddSaveButton.classList.add(settingsForm.inactiveButtonClass);
 }
@@ -79,7 +79,7 @@ function handleCardClick(name, link) {
 }
 
 const createCard = (card) => {
-  return new Card(card, '#grid-template', handleCardClick)
+  return new Card(card, '#grid-template', handleCardClick).getCard()
 
 }
   const initialSection = new Section({items: initialCards, 

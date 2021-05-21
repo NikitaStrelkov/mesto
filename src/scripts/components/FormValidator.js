@@ -39,27 +39,26 @@ _hasInvalidInput(inputList) {
   });
 }
 
-_disableButton(buttonElement) {
+_disableButton() {
   buttonElement.setAttribute('disabled', true);
   buttonElement.classList.add(this._settings.inactiveButtonClass);
 }
 
 resetForm() {
   const inputList = this._form.querySelectorAll(this._inputErrorSelector)
-  this._form.addEventListener('reset', () => {
-    this._disableButton(this._buttonElement);
+  this._formElement.addEventListener('reset', () => {
+    this._disableButton( );
     inputList.forEach((inputElement) => {
-      inputElement.classList.remove(this._settings.inputErrorClass)
+      this._hideInputError(inputElement)
     })
     });
-  this._form.reset();   
+     
 }
 
 // Переключение кнопки
 _toggleButtonState(inputList, buttonElement) {
   if (this._hasInvalidInput(inputList)) {
-    buttonElement.setAttribute('disabled', true);
-    buttonElement.classList.add(this._settings.inactiveButtonClass);
+    this._disableButton();
   } else {
     buttonElement.removeAttribute('disabled');
     buttonElement.classList.remove(this._settings.inactiveButtonClass);
