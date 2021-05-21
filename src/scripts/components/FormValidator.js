@@ -44,16 +44,16 @@ _disableButton() {
   buttonElement.classList.add(this._settings.inactiveButtonClass);
 }
 
-resetForm() {
-  const inputList = this._form.querySelectorAll(this._inputErrorSelector)
-  this._formElement.addEventListener('reset', () => {
-    this._disableButton( );
-    inputList.forEach((inputElement) => {
-      this._hideInputError(inputElement)
-    })
-    });
+// resetForm() {
+//   const inputList = this._form.querySelectorAll(this._inputErrorSelector)
+//   this._formElement.addEventListener('reset', () => {
+//     this._disableButton( );
+//     inputList.forEach((inputElement) => {
+//       this._hideInputError(inputElement)
+//     })
+//     });
      
-}
+// }
 
 // Переключение кнопки
 _toggleButtonState(inputList, buttonElement) {
@@ -71,6 +71,12 @@ _setEventListeners() {
     event.preventDefault();
   });
 const inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector));
+this._formElement.addEventListener('reset', () => {
+this._disableButton( );
+inputList.forEach((inputElement) => {
+  this._hideInputError(inputElement)
+})
+});
 this._toggleButtonState(inputList, this._buttonElement);
 inputList.forEach((inputElement) => {
   inputElement.addEventListener('input', () => {
