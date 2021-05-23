@@ -40,25 +40,14 @@ _hasInvalidInput(inputList) {
 }
 
 _disableButton() {
-  buttonElement.setAttribute('disabled', true);
-  buttonElement.classList.add(this._settings.inactiveButtonClass);
+  this._buttonElement.setAttribute('disabled', true);
+  this._buttonElement.classList.add(this._settings.inactiveButtonClass);
 }
-
-// resetForm() {
-//   const inputList = this._form.querySelectorAll(this._inputErrorSelector)
-//   this._formElement.addEventListener('reset', () => {
-//     this._disableButton( );
-//     inputList.forEach((inputElement) => {
-//       this._hideInputError(inputElement)
-//     })
-//     });
-     
-// }
 
 // Переключение кнопки
 _toggleButtonState(inputList, buttonElement) {
   if (this._hasInvalidInput(inputList)) {
-    this._disableButton();
+    this._disableButton()
   } else {
     buttonElement.removeAttribute('disabled');
     buttonElement.classList.remove(this._settings.inactiveButtonClass);
@@ -67,16 +56,10 @@ _toggleButtonState(inputList, buttonElement) {
 
 // Функция для навешивания событий на все формы
 _setEventListeners() {
+  const inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector));
   this._form.addEventListener('submit', (event) => {
     event.preventDefault();
   });
-const inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector));
-this._formElement.addEventListener('reset', () => {
-this._disableButton( );
-inputList.forEach((inputElement) => {
-  this._hideInputError(inputElement)
-})
-});
 this._toggleButtonState(inputList, this._buttonElement);
 inputList.forEach((inputElement) => {
   inputElement.addEventListener('input', () => {
@@ -84,6 +67,12 @@ inputList.forEach((inputElement) => {
     this._toggleButtonState(inputList, this._buttonElement);
   });
 });
+  this._form.addEventListener('reset', () => {
+    this._disableButton(this._buttonElement);
+    inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    })
+  });
 };
 
 // Валидация
