@@ -79,7 +79,7 @@ function handleCardClick(name, link) {
 }
 
 const createCard = (card) => {
-  return new Card(card, '#grid-template', handleCardClick).getCard()
+  return new Card(card, '#grid-template', handleCardClick)
 
 }
   const initialSection = new Section({items: initialCards, 
