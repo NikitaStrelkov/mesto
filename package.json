@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikitestrelkov/mesto.git"
+    "url": "git+https://github.com/oldmilky/mesto.git"
   },
   "author": "Rodion Strelkov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nikitestrelkov/mesto/issues"
+    "url": "https://github.com/oldmilky/mesto/issues"
   },
-  "homepage": "https://github.com/nikitestrelkov/mesto#readme",
+  "homepage": "https://github.com/oldmilky/mesto#readme",
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
