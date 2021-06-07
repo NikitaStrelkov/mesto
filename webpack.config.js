@@ -1,52 +1,63 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: { main: './src/pages/index.js' },
+  entry: './src/pages/index.js',
+  target: 'es5',
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-        publicPath: ''
+    path: path.resolve(__dirname, 'dist'),
   },
-    mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
-    compress: true,
-    port: 8080,
-    open: true
+    port: 8000,
+    historyApiFallback: true,
+    open: true,
+    /* hot: true, */
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
-      {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-        type: 'asset/resource'
-      },
-      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
-          loader: 'css-loader',
-          options: { importLoaders: 1 } 
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
         },
-        'postcss-loader']
-      }
-    ]
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif|woff2|woff|eot|ttf|otf)$/i,
+        /* type: 'asset/resource', */
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              esModule: false,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      filename: 'index.html',
+      template: './src/index.html',
     }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin()
-  ]
-};
+    new MiniCssExtractPlugin(),
+  ],
+}
